@@ -7,7 +7,7 @@
     } else {
       document.getElementById('onb-title').innerHTML = `Hello ${name}`;
     }
-    const url = 'http://localhost:5000/api/user/';
+    const url = 'https://bank-backend12.herokuapp.com/api/user/';
 
     const req = await fetch(url, {
       method: 'GET',

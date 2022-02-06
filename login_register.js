@@ -18,7 +18,7 @@ async function register() {
 
     buttonText.innerHTML = 'Please Wait...';
 
-    const url = 'http://localhost:5000/api/user/register';
+    const url = 'https://bank-backend12.herokuapp.com/api/user/register';
     const body = {
       firstName,
       lastName,
@@ -70,7 +70,7 @@ async function login() {
 
     buttonText.innerHTML = 'Please Wait...';
 
-    const url = 'http://localhost:5000/api/user/login';
+    const url = 'https://bank-backend12.herokuapp.com/api/user/login';
     const body = {
       email,
       password,
