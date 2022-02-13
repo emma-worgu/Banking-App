@@ -49,7 +49,7 @@ async function register() {
 
     if (req.status !== 200) {
       buttonText.innerHTML = 'SIGN UP';
-      return alert(res);
+      return alert(res.errMessage);
     };
     localStorage.setItem('token', res.token);
     localStorage.getItem('user-name', firstName);
@@ -89,7 +89,8 @@ async function login() {
 
     if (req.status !== 200) {
       buttonText.innerHTML = 'LOGIN';
-      return alert(res);
+      console.log(res);
+      return alert(res.errMessage);
     };
     localStorage.setItem('token', res.token);
     localStorage.setItem('user-name', res.user.name)

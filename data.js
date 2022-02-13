@@ -46,6 +46,12 @@
       } else {
         document.getElementById('accountNumber').textContent = res.user.acctNumber;
       }
+
+      if (document.getElementById('routingNumber') === null) {
+        console.log('Not Available');
+      } else {
+        document.getElementById('routingNumber').textContent = res.user.routingNumber;
+      }
     }
 
     document.getElementById('email-in').value = res.user.email;
