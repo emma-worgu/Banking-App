@@ -52,7 +52,7 @@ async function register() {
       return alert(res.errMessage);
     };
     localStorage.setItem('token', res.token);
-    localStorage.getItem('user-name', firstName);
+    localStorage.setItem('user-name', firstName);
     buttonText.innerHTML = 'SIGN UP';
     document.location.href = '/dashboard.html'
     console.log(res);
@@ -93,7 +93,7 @@ async function login() {
       return alert(res.errMessage);
     };
     localStorage.setItem('token', res.token);
-    localStorage.setItem('user-name', res.user.name)
+    localStorage.setItem('user-name', res.user.name);
     buttonText.innerHTML = 'LOGIN';
     document.location.href = '/dashboard.html'
   } catch (error) {
