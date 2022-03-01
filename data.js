@@ -64,3 +64,28 @@
     console.log(error);
   }
 } ());
+
+async function lock() {
+  try {
+    const url = 'https://bank-backend12.herokuapp.com/api/user/';
+
+    const req = await fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+        'auth-token': localStorage.getItem('token'),
+      }
+    });
+
+    const res = await req.json();
+
+    if (req.status !== 200) {
+      alert(res.message);
+    }
+
+    document.location.href = '/locked.html';
+  } catch (error) {
+    alert('Something Went Wrong!!');
+  }
+};
