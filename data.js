@@ -7,7 +7,7 @@
     } else {
       document.getElementById('onb-title').innerHTML = `Hello ${name}`;
     }
-    const url = 'https://bank-backend12.herokuapp.com/api/user/';
+    const url = 'https://bank-backend12.herokuapp.com/api/user/lock';
 
     const req = await fetch(url, {
       method: 'GET',
