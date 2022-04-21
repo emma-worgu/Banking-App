@@ -7,7 +7,7 @@
     } else {
       document.getElementById('onb-title').innerHTML = `Hello ${name}`;
     }
-    const url = 'https://bank-backend12.herokuapp.com/api/user/lock';
+    const url = 'https://bank-backend12.onrender.com/api/user/';
 
     const req = await fetch(url, {
       method: 'GET',
@@ -21,6 +21,10 @@
     const res = await req.json();
 
     console.log(res);
+
+    if (res.user.locked) {
+      return document.location.href = '/locked.html';
+    }
 
 
     if (req.status !== 200) {
@@ -67,7 +71,8 @@
 
 async function lock() {
   try {
-    const url = 'https://bank-backend12.herokuapp.com/api/user/';
+    const url = 'https://bank-backend12.onrender.com/api/user/lock';
+    // const url = 'http://localhost:5000/api/user/lock';
 
     const req = await fetch(url, {
       method: 'POST',
